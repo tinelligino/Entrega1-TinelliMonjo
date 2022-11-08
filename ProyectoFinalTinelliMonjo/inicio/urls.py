@@ -1,7 +1,7 @@
 from django.urls import path,re_path
 from django.views.static import serve
 from django.conf import settings
-from inicio.views import home,about,post,allposts,search,login,perfil
+from inicio.views import home,about,post,allposts,search,login,perfil,postlist
 from django.contrib.auth.views import LogoutView
 from django.conf.urls.static import static
 
@@ -12,6 +12,7 @@ urlpatterns = [
     path("home/", home, name="home"),
     path("about/", about, name="about"),
     path("post/<str:slug>/", post, name="post"),
+    path("postlist/<str:slug>/", postlist, name="postlist"),
     path("posts/", allposts, name="allposts"),
     path("search/", search, name="search"),
     path("login/", login, name="login"),

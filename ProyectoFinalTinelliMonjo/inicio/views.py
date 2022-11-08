@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render
 from .models import Author, Category, Post, Perfil, Suscripcion, PostUserColaborator, UserColaborator
 from django.contrib.auth.decorators import login_required
@@ -32,13 +33,23 @@ def search(request):
     query = request.GET.get('q')
     if query:
         queryset = queryset.filter(
-            Q(titleicontains=query) |
-            Q(overviewicontains=query)
+            Q(title__icontains=query) |
+            Q(overview__icontains=query)
         ).distinct()
     context = {
         'queryset': queryset
     }
     return render(request, 'search_bar.html', context)
+
+def postlist (request,slug):
+    category = Category.objects.get(slug = slug)
+    posts = Post.objects.filter(categories__in=[category])
+
+    context = {
+        'posts': posts,
+        'category': category,
+    }
+    return render(request, 'post_list.html', context)
 
 
 def allposts(request):
