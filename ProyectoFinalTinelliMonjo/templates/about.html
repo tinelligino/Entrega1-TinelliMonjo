@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main>
+<section class="text-gray-600 body-font ">
+        <figure class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
+            <img class="w-24 h-24 rounded-full mx-auto" src="{% static 'img/fotogino.jpg' %}" alt="about" >
+            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                <blockquote>
+                <p class="text-lg font-medium w-4/5 mx-auto">
+                    Tengo 21 años de edad, estoy estudiando Ingeniería en Sistemas en la UTN Córdoba y más que un estudiante, soy un entusiasta de la programación.
+                </p>
+                </blockquote>
+                <figcaption class="font-medium">
+                <div class="text-sky-500 dark:text-sky-400 w-4/5 mx-auto">
+                    Gino Tinelli
+                </div>
+                <div class="text-slate-700 dark:text-slate-500 w-4/5 mx-auto">
+                    Estudiante CoderHouse - curso Python
+                </div>
+                </figcaption>
+            </div>
+        </figure>
+    </section>
+<section class="text-gray-600 body-font ">
+        <figure class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
+            <img class="w-24 h-24 rounded-full mx-auto" src="{% static 'img/fotosanti.jpg' %}" alt="about" >
+            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                <blockquote>
+                <p class="text-lg font-medium w-4/5 mx-auto">
+                    Soy estudiante de Ingeniería en Sistemas en la UTN Córdoba y me gusta todo lo relacionado a la programación.
+                </p>
+                </blockquote>
+                <figcaption class="font-medium">
+                <div class="text-sky-500 dark:text-sky-400 w-4/5 mx-auto">
+                    Santiago Monjo
+                </div>
+                <div class="text-slate-700 dark:text-slate-500 w-4/5 mx-auto">
+                    Estudiante CoderHouse - curso Python
+                </div>
+                </figcaption>
+            </div>
+        </figure>
+    </section>
+    </main>
+{% endblock content %}
