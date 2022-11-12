@@ -172,3 +172,5 @@ CKEDITOR_CONFIGS = {
         }
     }
 }
+
+LOGIN_URL = 'login'

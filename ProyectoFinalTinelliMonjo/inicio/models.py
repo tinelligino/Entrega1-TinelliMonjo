@@ -25,6 +25,8 @@ class Category(models.Model):
     subtitle = models.CharField(max_length=20)
     slug = models.SlugField()
     thumbnail = models.ImageField()
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación",blank=True,null=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición",blank=True,null=True)
 
     def __str__(self):
         return self.title
@@ -41,6 +43,9 @@ class Post(models.Model):
     thumbnail = models.ImageField()
     categories = models.ManyToManyField(Category)
     featured = models.BooleanField()
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación",blank=True,null=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición",blank=True,null=True)
+
 
     def __str__(self):
         return self.title
@@ -49,6 +54,8 @@ class Perfil(models.Model):
     """Perfil :  """
     name = models.CharField(max_length=50)
     createdate = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación",blank=True,null=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición",blank=True,null=True)
 
     def __str__(self):
         return self.name 
@@ -58,6 +65,8 @@ class Perfil(models.Model):
 class Suscripcion(models.Model):
     name = models.CharField(max_length=50)
     createdate = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación",blank=True,null=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición",blank=True,null=True)
 
     def __str__(self):
         return self.name
@@ -72,6 +81,9 @@ class UserColaborator(models.Model):
     suscripcion = models.ForeignKey(Suscripcion, on_delete=models.CASCADE, default=1)
     createdate = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación",blank=True,null=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición",blank=True,null=True)
+    linkedin = models.TextField(max_length=100, blank=True,null=True)
 
     def __str__(self):
         return  f""" {self.email}  """
@@ -83,6 +95,8 @@ class PostUserColaborator(models.Model):
     title = models.CharField(max_length=100)
     content = RichTextField(blank=True,null=True)#
     createdate = models.DateTimeField(auto_now_add=True,blank=True,null=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación",blank=True,null=True)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición",blank=True,null=True)
 
     def __str__(self):
         return self.title

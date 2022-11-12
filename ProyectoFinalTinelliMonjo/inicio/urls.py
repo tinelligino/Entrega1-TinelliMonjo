@@ -1,8 +1,7 @@
 from django.urls import path,re_path
 from django.views.static import serve
 from django.conf import settings
-from inicio.views import home,about,post,allposts,search,login,perfil,postlist
-from django.contrib.auth.views import LogoutView
+from inicio.views import home,about,post,allposts,search,postlist
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -15,9 +14,7 @@ urlpatterns = [
     path("postlist/<str:slug>/", postlist, name="postlist"),
     path("posts/", allposts, name="allposts"),
     path("search/", search, name="search"),
-    path("login/", login, name="login"),
-    path("perfil/", perfil, name="perfil"),
-    path("logout",LogoutView.as_view(template_name="logout.html"),name="logout"),
+    
 ]
 
 if settings.DEBUG:

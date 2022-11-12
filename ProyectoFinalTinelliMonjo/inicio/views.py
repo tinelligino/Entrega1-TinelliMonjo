@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import render
 from .models import Author, Category, Post, Perfil, Suscripcion, PostUserColaborator, UserColaborator
-from django.contrib.auth.decorators import login_required
+
 
 
 def home(request):
@@ -59,10 +59,4 @@ def allposts(request):
     }
     return render(request, 'all_posts.html', context)
 
-def login(request):
-    pass
 
-@login_required(login_url='/login')
-def perfil(request):
-    userColaborator, es_NuevoUserColaborator = UserColaborator.objects.get_or_create(user = request.user)
-    return render(request, 'private/perfil.html',{'formulario':{}})

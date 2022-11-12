@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load extras %}
+{% block content %}
+<div class="bg-gray-100 font-sans leading-normal tracking-normal"> 
+
+    <!--Container-->
+    <div class="container w-full md:max-w-3xl mx-auto pt-20 pb-10">
+        <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
+
+            <!--Title-->
+            <div class="font-sans">
+                <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">
+                {{ post.title }}</h1>
+                <p class="text-sm md:text-base font-normal text-gray-600">
+                {{ obj.timestamp}}</p>
+                <img class="h-50 rounded w-full object-cover object-center mb-6" src="{{ post.thumbnail.url }}" alt="content">
+            </div>
+            <!--INICIO Post Content-->
+            <div class="py-6">
+                {{ post.content  }} 
+            </div>
+            <!--FIN Post Content-->
+        </div>
+
+        <!-- INICIO Divider-->
+        <hr class="border-b-2 border-gray-400 mb-8 mx-4">
+        <!--Author-->
+        <h4>Coder post publicado por : </h4>
+        <div class="flex w-full items-center font-sans px-4 py-12">
+
+            <img class="w-10 h-10 rounded-full mr-4" src="{{ post.author.profile_picture.url }}">
+            <div class="flex-1 px-2">
+                <p class="text-base font-bold text-base md:text-xl leading-none mb-2">
+                {{ post.author }}</p>
+                <p class="text-base text-base md:text-sl leading-none mb-2">
+                    {{ post.timestamp }}</p>
+            </div>
+
+        </div>
+        <!--/Author-->
+        <hr class="border-b-2 border-gray-400 mb-8 mx-4">
+        <!--FIN Divider-->
+    </div>
+</div>
+{% endblock content %}

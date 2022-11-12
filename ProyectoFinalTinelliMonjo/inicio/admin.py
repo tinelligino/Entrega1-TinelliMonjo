@@ -11,7 +11,18 @@ class AuthorAdmin(admin.ModelAdmin):
     list_filter = ('created','user')
 
 admin.site.register(Category)
-admin.site.register(Post)
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    readonly_fields = ['author','timestamp','created','updated']
+    list_display = ('author','title','post_categories','featured')
+    ordering = ('author', 'title','featured')
+    search_fields = ('author','title','featured')
+    date_hierarchy = 'created'
+    list_filter = ('created','author','featured')
+    def post_categories(self, obj):
+        return ", ".join(
+            [c.title for c in obj.categories.all().order_by("title")])
+    post_categories.short_description = "Categorías"
 admin.site.register(Perfil)
 admin.site.register(Suscripcion)
 admin.site.register(PostUserColaborator)
