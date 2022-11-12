@@ -8,7 +8,7 @@
         </p>  
         <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
-            {% comment %} {{formulario}} {% endcomment %}
+            
             <div>  
                 <label for="{{formulario.username.id_for_label }}"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{formulario.username.label_tag}}</label>    
                 <input type="text"

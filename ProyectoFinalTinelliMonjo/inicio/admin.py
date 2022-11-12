@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Author, Category, Post, Perfil, Suscripcion, PostUserColaborator, UserColaborator
-#admin.site.register(Author)
+
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     readonly_fields = ['created','updated']
