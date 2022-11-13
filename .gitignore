@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Base de datos basada en sqlite3
+db.sqlite3
+#Directorio de imagenes
+media
+#Directorio de cache de python
+__pycache__
+#Directorio de entorno virtual
+.venv
