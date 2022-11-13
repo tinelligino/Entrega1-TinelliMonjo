@@ -88,4 +88,4 @@ CoderHouse Proyecto Entrega Final - Alumnos: Gino Tinelli-Santiago Monjo
 >> - Requirements.txt  (Requerimientos utilizados y fundamentales para iniciar y ejecutar el proyecto, se creó utilizando el siguiente comando: pip freeze > requirements.txt)
 >
 >>*Datos de ADMIN para poder iniciar sesion*
->>##### Usuario: admin - Contraseña: contraseña.
+>>##### Usuario: admin - Contraseña: contraseña
